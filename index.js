@@ -26,8 +26,9 @@ const rules = auth.rewriter({
   orders: 660,
   users: 600,
 });
-server.use(rules);
 server.use(auth);
+server.use(rules);
+
 
 // ✅ API routes
 server.use("/api", router);
