@@ -30,7 +30,7 @@ server.use(rules);
 server.use(auth);
 
 // ✅ API routes
-server.use(router);
+server.use("api/", router);
 
 // ✅ Start server
 server.listen(8000, () => {
