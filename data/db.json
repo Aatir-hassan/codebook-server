@@ -283,6 +283,12 @@
       "password": "$2a$10$K9aEH3/VDb2QU/EsjrHGJO7X5JxCcg0bMAnBtyT3kBW9FL7FnnygO",
       "name": "aatir",
       "id": 1
+    },
+    {
+      "email": "piraatir241@gmail.com",
+      "password": "$2a$10$v6JC6.pQJBo9BFWiMwwS..hqceSuqIsDjlW5oSN6mvEyoWWEdx.Bq",
+      "name": "piraatir2241@gmail.com",
+      "id": 2
     }
   ]
 }
