@@ -1,8 +1,8 @@
-
 import express from "express";
 import jsonServer from "json-server";
-import auth from "json-server-auth";
 import cors from "cors";
+import auth from "json-server-auth";
+
 
 const server = express();
 const router = jsonServer.router("./data/db.json");
@@ -10,21 +10,25 @@ const middlewares = jsonServer.defaults();
 
 // ✅ Correct CORS setup
 server.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
+    cors({
+        
+        origin: [
+        "http://localhost:3000",
+        "https://e-commerce-weba-app.netlify.app"
+        ],
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
 );
 
 server.use(express.json());
 
 // ✅ Must come BEFORE json-server router
 const rules = auth.rewriter({
-  products: 444,
-  featured_products: 444,
-  orders: 660,
-  users: 600,
+    products: 444,
+    featured_products: 444,
+    orders: 660,
+    users: 600,
 });
 
 server.use(middlewares);
@@ -37,5 +41,5 @@ server.use("/api", router);
 server.db = router.db;
 
 server.listen(8000, () => {
-  console.log("🚀 Server running on http://localhost:8000");
+    console.log("🚀 Server running on http://localhost:8000");
 });
