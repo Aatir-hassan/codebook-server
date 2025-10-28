@@ -36,8 +36,8 @@ server.use(rules);
 server.use(auth);
 
 // ✅ IMPORTANT: Only use "/api" for your routes, not "/444/"
-// server.use("/api", router);
-server.use("/444/660/600", router);
+server.use("/api", router);
+
 
 server.db = router.db;
 
